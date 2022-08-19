@@ -27,9 +27,9 @@ class: inverse, middle
   
 * What can we bring to the table? or, some possible directions
 
-  * Case study: Comparing anomaly detection / Kokoszka's change-point detection
+  * Case study: Comparing anomaly detection paper / Kokoszka's change-point detection
+    * Possible new detection methods?
   * Local behavior of FPCA
-  * Change-detection from a projection POV (?)
   * (undeveloped): Applying neural networks to FDA problems
       
 * Next steps for three possible directions
@@ -476,7 +476,7 @@ class: center, inverse, middle
 
 
 --
-# Neural Network
+# Neural Networks
 
 * Meet with Piotr and Mark to decide whether this is worth pursuing
 
