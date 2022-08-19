@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Research Directions</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Russell Goebel" />
+    <meta name="date" content="2022-08-16" />
+    <script src="libs/header-attrs-2.13/header-attrs.js"></script>
+    <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
+    <link href="libs/remark-css-0.0.1/metropolis.css" rel="stylesheet" />
+    <link href="libs/remark-css-0.0.1/metropolis-fonts.css" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Research Directions
+## Potential projects adjacent to functional data analysis
+### Russell Goebel
+### 2022-08-16
+
+---
+
+class: inverse, middle
+
+# Outline
+
+* My background
+
+  * Research, Interests &amp; Philosophy, Mathematics Background
+
+* Motivation: Why Functional Data Analysis?
+
+  * Relationship with big data
+  * Possible opportunities
+  
+* What can we bring to the table? or, some possible directions
+
+  * Case study: Comparing anomaly detection / Kokoszka's change-point detection
+  * Local behavior of FPCA
+  * Change-detection from a projection POV (?)
+  * (undeveloped): Applying neural networks to FDA problems
+      
+* Next steps for three possible directions
+
+???
+
+- Mathematical background??
+
+---
+class: inverse, middle
+
+# My Background
+
+---
+
+
+background-image: url("images/pres_paper_title.PNG")
+background-size: contain
+
+???
+
+- The idea here is to give you an idea of what I have done, not to tell you where I have to go.
+
+---
+# Research Background: Time series
+
+
+`$$\\[1in]$$`
+
+
+
+.pull-left[![](./images/log_PUD.png) ]
+.pull-right[![](./images/log_NPS.png) ]
+
+
+---
+# Research Backround: SSA
+
+** Singular Spectrum Analysis ** is:
+
+* A **nonparametric** time series decomposition technique
+
+* A **spectral estimation** method related to the **Karhunen-Loeve** decomposition.
+
+This technique involves examining the eigenvectors / values of a **trajectory matrix:**
+
+
+&lt;img src="./images/ssa_traj_matrix.PNG" width="400px" style="display: block; margin: auto;" /&gt;
+
+
+
+---
+# Research Background: SSA
+
+**Singular Spectrum Analysis** decomposes a time series into trend, seasonality and noise.
+
+
+&lt;img src="./images/ssa_reconstruction1.png" width="700px" style="display: block; margin: auto;" /&gt;
+
+
+
+
+
+---
+# Research Background: Forecasts
+
+From a recent poster presented at JMM by Dylan Way:
+
+&lt;img src="./images/model_eq_performance.PNG" width="530px" style="display: block; margin: auto;" /&gt;
+
+
+---
+# Research Background: R Package
+
+&lt;img src="./images/top40.PNG" width="550px" style="display: block; margin: auto;" /&gt;
+
+&lt;img src="./images/rpackage.PNG" width="550px" style="display: block; margin: auto;" /&gt;
+
+---
+# Interests &amp; Philosophy 1
+
+Some statistical methods I like are:
+
+* Bayesian statistics (**highly principled**)
+
+* Time-series analysis (**application-driven**)
+
+* Nonparametric statistics (**data-driven** with **few assumptions**)
+
+* Functional Data Analysis (** interesting mathematical foundations + above **)
+
+I value **reproducibility**, and am **cautious about classical (frequentist) statistical methods**:
+
+* Not a big fan of statistical significance and p-values
+
+* Cautious about hypothesis tests
+
+
+
+
+
+
+
+
+---
+# Interests &amp; Philosophy 2
+
+
+
+I view statistics under the umbrella of **applied epistemology** (I care about the processes by which we come to know things).
+
+Some epistemelogical values that come with this:
+
+* I value interdisciplinary work (avoiding in-group biases)
+
+* I value rigor and solid mathematical foundations 
+
+* I value methods, not just the mathematics 
+
+
+---
+# Mathematics Background
+
+* Real Analysis: up to MA711
+
+* **Have not taken Functional Analysis yet**
+
+* Probability 1 and 2 (MA779-780).
+
+* 500 level stochastic processes (not 700 level yet--may want to take?)
+
+* MA 500 (stochastic processes for the design and analysis of algorithms)
+---
+class: inverse, middle
+
+# Motivation for exploring topics adjacent to Functional Data Analysis
+
+* Forward-thinking relationship with big-data
+
+* Elegant foundations in functional analysis
+  * Opportunities to provide insights (some questionable existing research)
+
+---
+# Big data and Functional Data Analysis
+
+(from 2015)
+
+&lt;img src="./images/introduction_recent_advances.PNG" width="800px" style="display: block; margin: auto;" /&gt;
+
+&lt;img src="./images/introduction_recent_advances_parallel.PNG" width="800px" style="display: block; margin: auto;" /&gt;
+
+
+---
+# Big data and Functional Data Analysis 
+
+
+&lt;img src="./images/introduction_developed_independently.PNG" width="800px" style="display: block; margin: auto;" /&gt;
+
+
+
+---
+# Big Data and Functional Data Analysis
+
+(2018)
+
+&lt;img src="./images/recent_advances.PNG" width="800px" style="display: block; margin: auto;" /&gt;
+
+
+
+
+
+---
+# Big Data and Functional Data Analysis
+
+&lt;img src="./images/recent_advances_analog.PNG" width="800px" style="display: block; margin: auto;" /&gt;
+
+
+
+
+---
+# Potential Opportunities 
+
+Existing functional regression techniques seem to ignore the vectorial KL expansion.
+
+&lt;img src="./images/dynamic.PNG" width="800px" style="display: block; margin: auto;" /&gt;
+
+&lt;img src="./images/dynamic_separately.PNG" width="800px" style="display: block; margin: auto;" /&gt;
+
+
+
+---
+# Potential Opportunities
+
+&lt;img src="./images/aue_prediction.PNG" width="800px" style="display: block; margin: auto;" /&gt;
+
+
+&lt;img src="./images/aue_prediction_covariates.PNG" width="800px" style="display: block; margin: auto;" /&gt;
+
+
+---
+# Low-hanging fruit:
+
+A possible low-hanging-fruit for research is **forecasting multivariate functional data** or **forcasting functional data with covariates** using the **vectorial KL expansion**.
+
+* However, this would be an "epsilon" paper.
+---
+class: inverse, middle
+
+# What can we bring to the table?
+
+
+  * Case study: Comparing anomaly detection / Kokoszka's change-point detection
+    * Possible new directions for change-point detection and anomaly detection from a projection POV
+  * Local behavior of FPCA residuals (extension of Anomaly Detection paper)
+    * When can we use FPCA residuals to make local inferences?
+    * Can we tighten bounds under Null
+  * (undeveloped): Applying neural networks to FDA problems
+      
+
+
+---
+# Comparing detection methods
+
+
+&lt;img src="./images/Anomaly_detection.PNG" width="800px" style="display: block; margin: auto;" /&gt;
+
+
+&lt;img src="./images/inference_for_functional_data.PNG" width="300px" style="display: block; margin: auto;" /&gt;
+
+
+
+---
+# Comparing detection procedures
+
+Change-point detection (from Anomaly Detection paper)
+
+&lt;img src="./images/anomaly_detection_observation_model.PNG" width="800px" style="display: block; margin: auto;" /&gt;
+
+
+&lt;img src="./images/anomaly_detection_remark.PNG" width="800px" style="display: block; margin: auto;" /&gt;
+
+
+
+
+
+
+---
+# Comparing detection procedures
+
+
+Change-point detection:
+
+
+&lt;img src="./images/change_point_detection.PNG" width="800px" style="display: block; margin: auto;" /&gt;
+
+A test statistic `\(S_{N,d}\)` to test if there is a change. A large `\(S_{N,d}\)` is evidence for a change.
+
+&lt;img src="./images/inference_for_functional_data_corollary.PNG" width="800px" style="display: block; margin: auto;" /&gt;
+
+
+---
+# Possible opportunity
+
+The subspace of detectable signals in the projection framework is orthogonal to the subspace of detectable signals in Kokoszka's framework. 
+
+To try to illustrate the two methods, consider PCA:
+
+&lt;img src="Presentation_Rmd_files/figure-html/unnamed-chunk-21-1.png" width="400px" style="display: block; margin: auto;" /&gt;
+
+
+
+
+---
+# Possible opportunities
+
+
+* Is there a way to develop a procedure that can detect changes in any subspace? 
+  * Naive approach: "glue the two procedures together". 
+  
+  
+Two ideas for more novel approaches:
+
+1. Functional Mahalanobis Distance (not completely new)
+2. Explicitly derive some stochastic properties of projections under alternative
+
+---
+# Functional Mahalanobis Distance
+(2020)
+&lt;img src="./images/Mahalanobis_1.PNG" width="600px" style="display: block; margin: auto;" /&gt;
+
+---
+# Functional Mahalanobis Distance
+
+&lt;img src="./images/Mahalanobis_2.PNG" width="550px" style="display: block; margin: auto;" /&gt;
+ 
+ ---
+
+&lt;img src="./images/Mahalanobis_3.PNG" width="550px" style="display: block; margin: auto;" /&gt;
+
+ ---
+
+&lt;img src="./images/Mahalanobis_4.PNG" width="550px" style="display: block; margin: auto;" /&gt;
+
+---
+# Possible setup for stochastic properties
+
+
+
+Let `\(X(t,\omega) = \sum_{k=1}^{\infty}\sqrt{\lambda}_k\phi_k(t)Y_k(\omega)\)` be the KL expansion of `\(X(t,\omega)\)`. 
+
+Then `\(Z(t,\omega) = \sum_{k} \phi_k(t) \bigg(\sum_{\ell = 1}^{\infty}\tilde{\alpha}_{k,\ell} Y_{\ell}(\omega) \bigg) = \sum_{k}\phi_k(t) \beta_k \tilde{Y}_k(\omega)\)`
+
+What can we say about `\(\mathbb{E}\bigg[(\lambda_k Y_k(\omega)-\beta_k \tilde{Y}_k(\omega))^2 \bigg]\)`?
+
+
+* Here we can make assumptions about `\(Z\)`, such as that `\(Z(t,\omega) = X(t,\omega)+\mu(t)\)`.
+
+* This could lead to potential test statistics for different kinds of changes
+
+---
+# Possible Direction 2: Locality
+
+Let `\(v \in L^2_{\mathbb{P}}(\Omega; L^2(U))\)` be given by
+`\begin{align*}
+    v(x,\omega) = E[v] + \sum_{k \in \mathbb{N}}\lambda_k^{1/2} \phi_k(x) Y_k(\omega).
+\end{align*}`
+
+Where the residuals `\(R(x,\omega) = \sum_{k=M+1}^{\infty}\lambda^{1/2}\phi_k(x)Y_k(\omega)\)`, we can write for any `\(a &gt; 0\)` that
+`\begin{align*}
+    \mathbb{P}\bigg( \int_{U} R(x,\omega)^2dx \geq a \bigg) \leq \frac{\sum_{k=M+1}^{\infty}\lambda_k}{a},
+\end{align*}`
+
+which suggests that when `\(M\)` is large, `\(\int R(x,\omega)^2dx\)` tends to be small with high probability.
+
+
+This same bound can be used for local changes, but seems like a **loose bound**. Given some assumptions about `\(v\)` (such as on second derivatives) we might be able to find a better bound.
+
+---
+# More on Locality
+
+Under the alternative, results from the Anomaly Detection paper suggests local anomalies can be detected using FPCA residuals. 
+
+Are there any complications interpreting this? For example, can a large residual occur in a region where the anomaly isn't?
+
+
+Let `\(U = [0,1]\)`. Suppose `\(\phi_1(t) = \chi_{[0,1]}(t).\)`
+
+Consider two anomaly signals `\(w_1(\omega,t) = \chi_{[0.5,1]}(t)\)` and `\(w_2(\omega,t) = -0.5 \chi_{[0,0.5)}+0.5 \chi_{[0.5,1]} = w_1(\omega,t)-0.5.\)` .  
+
+Are these signals distinguishable after projection? If they are not, then are there any problems that arise with interpreting the region where anomalies occur?
+
+I think it might be worth thinking through this as it could lead to insights about local residuals for FPCA.
+
+
+---
+# Neural Networks
+
+In an email, Piotr suggested that using Neural Networks to solve some problems in FDA is a hot topic. I would be interested in exploring this, but I don't have more information about it.
+
+---
+class: center, inverse, middle
+
+# Next Steps
+
+---
+# Broadly
+
+* I need to develop more maturity with Functional Analysis. I can do this using Mark's lecture notes and website and take this course in the Spring.
+* I aim to gain stronger background on Functional Data Analysis. I can do this by reading more papers and possibly meeting with Piotr.
+
+
+---
+# Anomaly Detection 
+
+* Explore Mahalanobis distance papers and examine efficacy in anomaly detection. Are there any insights we can provide?
+* Experiment with explicit formulations of anomaly projections under different assumptions (eg what if the change is a constant). Can we come up with a new test?
+* Develop some kind of realistic plan for what a paper might look like.
+---
+# Locality
+
+* Experiment with deriving tighter bounds on residuals
+* Explore locality to get a better understand of interpreting local residuals.
+
+
+
+
+
+--
+# Neural Network
+
+* Meet with Piotr and Mark to decide whether this is worth pursuing
+
+--
+
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
